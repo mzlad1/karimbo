@@ -368,6 +368,11 @@
   background: #f8f9fa;
 }
 
+/* Override RTL for third section in Arabic */
+.homepage[dir="rtl"] .third-section {
+  direction: ltr;
+}
+
 .section-content-third {
   max-width: 1200px;
   margin: 0 auto;
@@ -423,6 +428,13 @@
 /* Hebrew language styling for logistics-subtitle */
 .homepage[data-language="hb"] .logistics-subtitle {
   color: #9e9e41;
+}
+
+/* RTL support for Arabic logistics titles */
+.homepage[dir="rtl"] .logistics-title,
+.homepage[dir="rtl"] .logistics-subtitle {
+  direction: rtl;
+  text-align: left;
 }
 
 .title-underline {
