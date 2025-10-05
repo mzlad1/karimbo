@@ -1,20 +1,19 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import HomePage from "./components/HomePage";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 function App() {
   return (
-    <div className="app">
-      {/* Navbar Section */}
-      <Navbar />
+    <LanguageProvider>
+      <div className="app">
+        {/* Navbar Section */}
+        <Navbar />
 
-      {/* All Sections Combined */}
-      <HomePage />
-
-      {/* Third Section */}
-
-      {/* Footer */}
-    </div>
+        {/* All Sections Combined */}
+        <HomePage />
+      </div>
+    </LanguageProvider>
   );
 }
 

@@ -153,6 +153,11 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Hebrew language styling for text-box */
+.homepage[data-language="hb"] .text-box {
+  background: #9e9e41;
+}
+
 .text-box-content {
   color: #1b457c;
   font-size: 1.25rem;
@@ -160,6 +165,63 @@
   line-height: 1.6;
   margin: 0;
   text-align: left;
+}
+
+/* Hebrew language styling for text-box content */
+.homepage[data-language="hb"] .text-box-content {
+  color: white;
+}
+
+/* RTL support for Arabic text */
+.text-box-content[dir="rtl"] {
+  text-align: right;
+  font-family: "Arial", "Segoe UI", "Tahoma", sans-serif;
+}
+
+/* RTL support for the entire homepage */
+.homepage[dir="rtl"] {
+  direction: rtl;
+}
+
+/* RTL support for specific elements */
+.homepage[dir="rtl"] .text-box-content {
+  text-align: right;
+}
+
+.homepage[dir="rtl"] .parts-list {
+  text-align: right;
+  padding-right: 2rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.homepage[dir="rtl"] .parts-item {
+  text-align: right;
+  position: relative;
+}
+
+.homepage[dir="rtl"] .parts-item::before {
+  content: "•";
+  position: absolute;
+  right: -1.2rem;
+  color: #f7931e;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.homepage[dir="rtl"] .card-title,
+.homepage[dir="rtl"] .card-subtitle {
+  text-align: center; /* Keep cards centered regardless of RTL */
+}
+
+.homepage[dir="rtl"] .global-title,
+.homepage[dir="rtl"] .global-subtitle {
+  text-align: center; /* Keep global reach section centered */
+}
+
+.homepage[dir="rtl"] .logistics-title,
+.homepage[dir="rtl"] .logistics-subtitle {
+  text-align: center; /* Keep logistics titles centered */
 }
 
 /* Bottom Images Styles */
@@ -210,20 +272,45 @@
   color: #1b457c;
 }
 
+/* Hebrew language styling for auto-parts */
+.homepage[data-language="hb"] .auto-parts {
+  color: #4b6467;
+}
+
 .truck-parts::before {
   color: #f7931e;
+}
+
+/* Hebrew language styling for truck-parts::before */
+.homepage[data-language="hb"] .truck-parts::before {
+  color: #9e9e41;
 }
 
 .heavy-parts {
   color: #1b457c;
 }
 
+/* Hebrew language styling for heavy-parts */
+.homepage[data-language="hb"] .heavy-parts {
+  color: #4b6467;
+}
+
 .heavy-parts::before {
   color: #1b457c;
 }
 
+/* Hebrew language styling for heavy-parts::before */
+.homepage[data-language="hb"] .heavy-parts::before {
+  color: #4b6467;
+}
+
 .motorcycle-parts::before {
   color: #f7931e;
+}
+
+/* Hebrew language styling for motorcycle-parts::before */
+.homepage[data-language="hb"] .motorcycle-parts::before {
+  color: #9e9e41;
 }
 
 .like-image {
@@ -253,8 +340,18 @@
   color: #f7931e;
 }
 
+/* Hebrew language styling for truck-parts */
+.homepage[data-language="hb"] .truck-parts {
+  color: #9e9e41;
+}
+
 .motorcycle-parts {
   color: #f7931e;
+}
+
+/* Hebrew language styling for motorcycle-parts */
+.homepage[data-language="hb"] .motorcycle-parts {
+  color: #9e9e41;
 }
 
 .scrap-image {
@@ -310,6 +407,11 @@
   line-height: 1.2;
 }
 
+/* Hebrew language styling for logistics-title */
+.homepage[data-language="hb"] .logistics-title {
+  color: #9e9e41;
+}
+
 .logistics-subtitle {
   font-size: 2.8rem;
   font-weight: bold;
@@ -318,11 +420,20 @@
   line-height: 1.2;
 }
 
+/* Hebrew language styling for logistics-subtitle */
+.homepage[data-language="hb"] .logistics-subtitle {
+  color: #9e9e41;
+}
+
 .title-underline {
   width: 80px;
   height: 4px;
   background: #1b457c;
   margin: 0;
+}
+/* Hebrew language styling for title-underline */
+.homepage[data-language="hb"] .title-underline {
+  background: #4b6467;
 }
 
 .dots-pattern-right {
@@ -395,12 +506,22 @@
   color: #1b457c !important;
 }
 
+/* Hebrew language styling for blue-text */
+.homepage[data-language="hb"] .blue-text {
+  color: #4b6467 !important;
+}
+
 .white-text {
   color: white !important;
 }
 
 .orange-text {
   color: #f7931e !important;
+}
+
+/* Hebrew language styling for orange-text */
+.homepage[data-language="hb"] .orange-text {
+  color: #9e9e41 !important;
 }
 
 /* Global Reach Section */
@@ -424,6 +545,11 @@
   position: absolute;
 }
 
+/* Hebrew language styling for plus decorations */
+.homepage[data-language="hb"] .plus {
+  color: #9e9e41;
+}
+
 .plus-1 {
   top: 0;
   right: 20px;
@@ -436,12 +562,17 @@
 
 .global-reach-badge {
   position: relative;
-  top: 50px;
+  top: 40px;
   background: #f7931e;
   padding: 1.5rem 2.5rem;
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Hebrew language styling for global-reach-badge */
+.homepage[data-language="hb"] .global-reach-badge {
+  background: #9e9e41;
 }
 
 .global-title {
@@ -638,6 +769,11 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Hebrew language styling for contact-banner */
+.homepage[data-language="hb"] .contact-banner {
+  background: #9e9e41;
+}
+
 .contact-details {
   display: flex;
   justify-content: space-between;
@@ -651,6 +787,12 @@
   color: #1b457c;
   font-size: 1.1rem;
   font-weight: bold;
+}
+
+/* Hebrew language styling for phone and email */
+.homepage[data-language="hb"] .phone,
+.homepage[data-language="hb"] .email {
+  color: white;
 }
 
 .location-section {
@@ -670,6 +812,11 @@
   color: #1b457c;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+/* Hebrew language styling for location-text */
+.homepage[data-language="hb"] .location-text {
+  color: #4b6467;
 }
 
 /* Responsive Design */
@@ -891,284 +1038,283 @@
   }
 
   .global-reach-badge {
-    
+    .dots-pattern-right {
+      top: 60px;
+      right: 30px;
+    }
 
-  .dots-pattern-right {
-    top: 60px;
-    right: 30px;
+    .vert-dots-right {
+      max-width: 200px;
+    }
+
+    .service-card {
+      min-width: 250px;
+    }
+
+    .card-icon {
+      width: 180px;
+      height: auto;
+    }
+
+    .global-reach-section {
+      justify-content: center;
+    }
+
+    .location-tag {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.8rem;
+    }
+
+    /* Footer Responsive */
+    .social-icon-img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .contact-btn-bg {
+      height: 50px;
+    }
+
+    .contact-btn-text {
+      font-size: 1rem;
+    }
+
+    .contact-details {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .phone,
+    .email {
+      font-size: 1rem;
+    }
   }
 
-  .vert-dots-right {
-    max-width: 200px;
-  }
+  @media (max-width: 480px) {
+    /* Hero Section */
+    .hero-title-image {
+      max-width: 350px;
+    }
 
-  .service-card {
-    min-width: 250px;
-  }
+    .hero-section {
+      height: 100vh;
+      min-height: 500px;
+    }
 
-  .card-icon {
-    width: 180px;
-    height: auto;
-  }
+    .hero-content {
+      padding: 2rem 1rem 0 1rem;
+    }
 
-  .global-reach-section {
-    justify-content: center;
-  }
+    .stars-pattern {
+      max-width: 60px;
+    }
 
-  .location-tag {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-  }
+    .dots-pattern {
+      max-width: 150px;
+      width: 150px;
+    }
 
-  /* Footer Responsive */
-  .social-icon-img {
-    width: 50px;
-    height: 50px;
-  }
+    .pattern-left {
+      left: 5px;
+    }
 
-  .contact-btn-bg {
-    height: 50px;
-  }
+    .pattern-right {
+      right: 5px;
+      bottom: -60px;
+    }
 
-  .contact-btn-text {
-    font-size: 1rem;
-  }
+    /* Second Section */
+    .second-section {
+      padding: 3rem 1rem 2rem;
+    }
 
-  .contact-details {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
+    .half-circle-container {
+      left: 50px;
+      top: 0;
+    }
 
-  .phone,
-  .email {
-    font-size: 1rem;
-  }
-}
+    .half-circle-image {
+      max-width: 60px;
+    }
 
-@media (max-width: 480px) {
-  /* Hero Section */
-  .hero-title-image {
-    max-width: 350px;
-  }
+    .dots-pattern-left {
+      left: 50px;
+      top: 40px;
+    }
 
-  .hero-section {
-    height: 100vh;
-    min-height: 500px;
-  }
+    .vert-dots-image {
+      max-width: 100px;
+    }
 
-  .hero-content {
-    padding: 2rem 1rem 0 1rem;
-  }
+    .container-image-wrapper {
+      margin-bottom: -2rem;
+    }
 
-  .stars-pattern {
-    max-width: 60px;
-  }
+    .container-image {
+      max-width: 300px;
+    }
 
-  .dots-pattern {
-    max-width: 150px;
-    width: 150px;
-  }
+    .like-image-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  .pattern-left {
-    left: 5px;
-  }
+    .like-image {
+      max-width: 120px;
+    }
 
-  .pattern-right {
-    right: 5px;
-    bottom: -60px;
-  }
+    .success-rate-text {
+      font-size: 0.85rem;
+    }
 
-  /* Second Section */
-  .second-section {
-    padding: 3rem 1rem 2rem;
-  }
+    .scrap-image {
+      max-width: 180px;
+    }
 
-  .half-circle-container {
-    left: 50px;
-    top: 0;
-  }
+    .bottom-images {
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 0 0.5rem;
+      margin-top: 1.5rem;
+      align-items: center;
+    }
 
-  .half-circle-image {
-    max-width: 60px;
-  }
+    .services-list {
+      margin: 0;
+      order: 2;
+      justify-content: center;
+      width: 100%;
+    }
 
-  .dots-pattern-left {
-    left: 50px;
-    top: 40px;
-  }
+    .scrap-image-container {
+      order: 3;
+      display: flex;
+      justify-content: center;
+    }
 
-  .vert-dots-image {
-    max-width: 100px;
-  }
+    .parts-list {
+      font-size: 0.9rem;
+      text-align: center;
+    }
 
-  .container-image-wrapper {
-    margin-bottom: -2rem;
-  }
+    .parts-item {
+      margin: 0.3rem 0;
+    }
 
-  .container-image {
-    max-width: 300px;
-  }
+    .text-box {
+      padding: 1.5rem;
+      border-radius: 15px;
+    }
 
-  .like-image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    .text-box-content {
+      font-size: 1rem;
+    }
 
-  .like-image {
-    max-width: 120px;
-  }
+    /* Second Section Responsive */
+    .section-content-second {
+      top: -50px;
+    }
 
-  .success-rate-text {
-    font-size: 0.85rem;
-  }
+    /* Logistics Services Mobile */
+    .logistics-title,
+    .logistics-subtitle {
+      font-size: 1.8rem;
+    }
 
-  .scrap-image {
-    max-width: 180px;
-  }
+    .left-stars-image {
+      max-width: 60px;
+    }
 
-  .bottom-images {
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 0 0.5rem;
-    margin-top: 1.5rem;
-    align-items: center;
-  }
+    .dots-pattern-right {
+      top: 40px;
+      right: 20px;
+    }
 
-  .services-list {
-    margin: 0;
-    order: 2;
-    justify-content: center;
-    width: 100%;
-  }
+    .vert-dots-right {
+      display: none;
+    }
 
-  .scrap-image-container {
-    order: 3;
-    display: flex;
-    justify-content: center;
-  }
+    .services-cards {
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+    }
 
-  .parts-list {
-    font-size: 0.9rem;
-    text-align: center;
-  }
+    .service-card {
+      flex: 0 0 calc(50% - 0.5rem);
+      min-width: 140px;
+      max-width: 160px;
+      padding: 1rem 0.5rem;
+    }
 
-  .parts-item {
-    margin: 0.3rem 0;
-  }
+    .card-icon {
+      width: 120px;
+      height: auto;
+    }
 
-  .text-box {
-    padding: 1.5rem;
-    border-radius: 15px;
-  }
+    .card-title {
+      font-size: 0.9rem;
+      bottom: 40px;
+    }
 
-  .text-box-content {
-    font-size: 1rem;
-  }
+    .card-subtitle {
+      font-size: 0.9rem;
+      bottom: 20px;
+    }
 
-  /* Second Section Responsive */
-  .section-content-second {
-    top: -50px;
-  }
+    .global-title,
+    .global-subtitle {
+      font-size: 1.4rem;
+    }
 
-  /* Logistics Services Mobile */
-  .logistics-title,
-  .logistics-subtitle {
-    font-size: 1.8rem;
-  }
+    .global-reach-badge {
+      padding: 1rem 1.5rem;
+    }
 
-  .left-stars-image {
-    max-width: 60px;
-  }
+    .location-tag {
+      font-size: 0.7rem;
+      padding: 0.3rem 0.6rem;
+    }
 
-  .dots-pattern-right {
-    top: 40px;
-    right: 20px;
-  }
+    .plus {
+      font-size: 1.5rem;
+    }
 
-  .vert-dots-right {
-    display: none;
-  }
+    /* Footer Mobile */
+    .social-icons-footer {
+      gap: 1rem;
+    }
 
-  .services-cards {
-    flex-direction: row;
-    justify-content: center;
-    gap: 1rem;
-  }
+    .social-icon-img {
+      width: 45px;
+      height: 45px;
+    }
 
-  .service-card {
-    flex: 0 0 calc(50% - 0.5rem);
-    min-width: 140px;
-    max-width: 160px;
-    padding: 1rem 0.5rem;
-  }
+    .contact-btn-bg {
+      height: 45px;
+    }
 
-  .card-icon {
-    width: 120px;
-    height: auto;
-  }
+    .contact-btn-text {
+      font-size: 0.9rem;
+    }
 
-  .card-title {
-    font-size: 0.9rem;
-    bottom: 40px;
-  }
+    .contact-banner {
+      padding: 1rem 1.5rem;
+    }
 
-  .card-subtitle {
-    font-size: 0.9rem;
-    bottom: 20px;
-  }
+    .contact-details {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
 
-  .global-title,
-  .global-subtitle {
-    font-size: 1.4rem;
-  }
+    .phone,
+    .email {
+      font-size: 0.9rem;
+    }
 
-  .global-reach-badge {
-    padding: 1rem 1.5rem;
-  }
-
-  .location-tag {
-    font-size: 0.7rem;
-    padding: 0.3rem 0.6rem;
-  }
-
-  .plus {
-    font-size: 1.5rem;
-  }
-
-  /* Footer Mobile */
-  .social-icons-footer {
-    gap: 1rem;
-  }
-
-  .social-icon-img {
-    width: 45px;
-    height: 45px;
-  }
-
-  .contact-btn-bg {
-    height: 45px;
-  }
-
-  .contact-btn-text {
-    font-size: 0.9rem;
-  }
-
-  .contact-banner {
-    padding: 1rem 1.5rem;
-  }
-
-  .contact-details {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .phone,
-  .email {
-    font-size: 0.9rem;
-  }
-
-  .location-text {
-    font-size: 1rem;
+    .location-text {
+      font-size: 1rem;
+    }
   }
 }

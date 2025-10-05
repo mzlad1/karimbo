@@ -1,13 +1,109 @@
+import React from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 import "./HomePage.css";
 
 function HomePage() {
+  const { t, language } = useLanguage();
+
+  const getHeroTitleImage = () => {
+    switch (language) {
+      case "ar":
+        return "/images/heroTitleAR.png";
+      case "ch":
+        return "/images/heroTitleCH.png";
+      case "hb":
+        return "/images/heroTitleHB.png";
+      default:
+        return "/images/heroTitle.png";
+    }
+  };
+
+  const getLikeImage = () => {
+    switch (language) {
+      case "ar":
+        return "/images/likeAR.png";
+      case "ch":
+        return "/images/likeCH.png";
+      case "hb":
+        return "/images/likeHB.png";
+      default:
+        return "/images/like.png";
+    }
+  };
+
+  const getHeroImage = () => {
+    return language === "hb"
+      ? "/images/heroImage.png"
+      : "/images/heroImage.png";
+  };
+
+  const getScrapImage = () => {
+    return language === "hb" ? "/images/scrap2.png" : "/images/scrap2.png";
+  };
+
+  const getTopContainerImage = () => {
+    return language === "hb"
+      ? "/images/topContainer.png"
+      : "/images/topContainer.png";
+  };
+
+  const getServiceCardImage = (cardNumber) => {
+    return language === "hb"
+      ? `/images/HB/cardHB${cardNumber}.png`
+      : `/images/card${cardNumber}.png`;
+  };
+
+  const getHalfCircleImage = () => {
+    return language === "hb"
+      ? "/images/HB/halfCircleHB.png"
+      : "/images/halfCircle.png";
+  };
+
+  const getRightStarsImage = () => {
+    return language === "hb"
+      ? "/images/HB/right-starsHB.png"
+      : "/images/right-stars.png";
+  };
+
+  const getLeftStarsImage = () => {
+    return language === "hb"
+      ? "/images/HB/left-starsHB.png"
+      : "/images/left-stars.png";
+  };
+
+  const getMapImage = () => {
+    return language === "hb" ? "/images/HB/mapHB.png" : "/images/map.png";
+  };
+
+  const getSocialImage = (platform) => {
+    return language === "hb"
+      ? `/images/HB/${platform}HB.png`
+      : `/images/${platform}.png`;
+  };
+
+  const getHorzDotsImage = () => {
+    return language === "hb"
+      ? "/images/HB/horz-dotHB.png"
+      : "/images/horz-dots.png";
+  };
+
+  const getVertDotsImage = () => {
+    return language === "hb"
+      ? "/images/HB/vert-dotsHB.png"
+      : "/images/vert-dots.png";
+  };
+
   return (
-    <div className="homepage">
+    <div
+      className="homepage"
+      dir={language === "ar" ? "rtl" : "ltr"}
+      data-language={language}
+    >
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-background">
           <img
-            src="/images/heroImage.png"
+            src={getHeroImage()}
             alt="Door to Door Shipping"
             className="hero-image"
           />
@@ -16,8 +112,8 @@ function HomePage() {
         <div className="hero-content">
           <div className="hero-text">
             <img
-              src="/images/heroTitle.png"
-              alt="Door to Door, Powering Your Trade"
+              src={getHeroTitleImage()}
+              alt={t("heroTitle")}
               className="hero-title-image"
             />
           </div>
@@ -26,14 +122,14 @@ function HomePage() {
         <div className="hero-patterns">
           <div className="pattern-left">
             <img
-              src="/images/right-stars.png"
+              src={getRightStarsImage()}
               alt="Stars Pattern"
               className="stars-pattern"
             />
           </div>
           <div className="pattern-right">
             <img
-              src="/images/horz-dots.png"
+              src={getHorzDotsImage()}
               alt="Dots Pattern"
               className="dots-pattern"
             />
@@ -45,7 +141,7 @@ function HomePage() {
       <section className="second-section">
         <div className="half-circle-container">
           <img
-            src="/images/halfCircle.png"
+            src={getHalfCircleImage()}
             alt="Half Circle"
             className="half-circle-image"
           />
@@ -53,7 +149,7 @@ function HomePage() {
 
         <div className="dots-pattern-left">
           <img
-            src="/images/vert-dots.png"
+            src={getVertDotsImage()}
             alt="Dots Pattern"
             className="vert-dots-image"
           />
@@ -69,21 +165,21 @@ function HomePage() {
           </div>
 
           <div className="text-box">
-            <p className="text-box-content">
-              We provide dedicated logistic service for powering auto parts
-              trade to Israeli and Palestinian markets.
+            <p
+              className="text-box-content"
+              dir={language === "ar" ? "rtl" : "ltr"}
+            >
+              {t("mainDescription")}
               <br />
               <br />
-              Our long experience, cutting edge knowledge, and deep
-              understanding of requirements are our key to secure your trade
-              logistics from door to door without concern.
+              {t("experienceDescription")}
             </p>
           </div>
 
           <div className="bottom-images">
             <div className="like-image-container">
               <img
-                src="/images/like.png"
+                src={getLikeImage()}
                 alt="100% Success Rate"
                 className="like-image"
               />
@@ -92,20 +188,18 @@ function HomePage() {
             <div className="services-list">
               <div className="vertical-border"></div>
               <ul className="parts-list">
-                <li className="parts-item auto-parts">Auto Parts</li>
-                <li className="parts-item truck-parts">Truck Parts</li>
-                <li className="parts-item heavy-parts">
-                  Heavy Engineering Machinery Parts
-                </li>
+                <li className="parts-item auto-parts">{t("autoParts")}</li>
+                <li className="parts-item truck-parts">{t("truckParts")}</li>
+                <li className="parts-item heavy-parts">{t("heavyParts")}</li>
                 <li className="parts-item motorcycle-parts">
-                  Motorcycles Parts
+                  {t("motorcycleParts")}
                 </li>
               </ul>
             </div>
 
             <div className="scrap-image-container">
               <img
-                src="/images/scrap2.png"
+                src={getScrapImage()}
                 alt="Auto Parts"
                 className="scrap-image"
               />
@@ -120,20 +214,20 @@ function HomePage() {
           <div className="logistics-header">
             <div className="stars-pattern-left">
               <img
-                src="/images/left-stars.png"
+                src={getLeftStarsImage()}
                 alt="Stars Pattern"
                 className="left-stars-image"
               />
             </div>
             <div className="header-content">
-              <h2 className="logistics-title">Reliable, End-to-End</h2>
-              <h2 className="logistics-subtitle">Logistics Solutions</h2>
+              <h2 className="logistics-title">{t("logisticsTitle")}</h2>
+              <h2 className="logistics-subtitle">{t("logisticsSubtitle")}</h2>
               <div className="title-underline"></div>
             </div>
           </div>
           <div className="dots-pattern-right">
             <img
-              src="/images/vert-dots.png"
+              src={getVertDotsImage()}
               alt="Dots Pattern"
               className="vert-dots-right"
             />
@@ -142,48 +236,48 @@ function HomePage() {
           <div className="services-cards">
             <div className="service-card card-primary">
               <img
-                src="/images/card1.png"
+                src={getServiceCardImage(1)}
                 alt="Air Freight"
                 className="card-icon"
               />
-              <h3 className="card-title white-text">Air Freight</h3>
-              <h4 className="card-subtitle white-text">Solutions</h4>
+              <h3 className="card-title white-text">{t("airFreight")}</h3>
+              <h4 className="card-subtitle white-text">{t("solutions")}</h4>
             </div>
             <div className="service-card card-secondary">
               <img
-                src="/images/card2.png"
+                src={getServiceCardImage(2)}
                 alt="Ocean Freight"
                 className="card-icon"
               />
-              <h3 className="card-title blue-text">Ocean Freight</h3>
-              <h4 className="card-subtitle blue-text">Services</h4>
+              <h3 className="card-title blue-text">{t("oceanFreight")}</h3>
+              <h4 className="card-subtitle blue-text">{t("services")}</h4>
             </div>
             <div className="service-card card-secondary">
               <img
-                src="/images/card3.png"
+                src={getServiceCardImage(3)}
                 alt="Road Transport"
                 className="card-icon"
               />
-              <h3 className="card-title blue-text">Road Transport</h3>
-              <h4 className="card-subtitle blue-text">& Delivery</h4>
+              <h3 className="card-title blue-text">{t("roadTransport")}</h3>
+              <h4 className="card-subtitle blue-text">{t("delivery")}</h4>
             </div>
             <div className="service-card card-dark">
               <img
-                src="/images/card4.png"
+                src={getServiceCardImage(4)}
                 alt="Customs Clearance"
                 className="card-icon"
               />
-              <h3 className="card-title orange-text">Customs</h3>
-              <h4 className="card-subtitle orange-text">Clearance</h4>
+              <h3 className="card-title orange-text">{t("customs")}</h3>
+              <h4 className="card-subtitle orange-text">{t("clearance")}</h4>
             </div>
             <div className="service-card card-secondary">
               <img
-                src="/images/card5.png"
+                src={getServiceCardImage(5)}
                 alt="Warehouse Management"
                 className="card-icon"
               />
-              <h3 className="card-title blue-text">Warehouse</h3>
-              <h4 className="card-subtitle blue-text">Management</h4>
+              <h3 className="card-title blue-text">{t("warehouse")}</h3>
+              <h4 className="card-subtitle blue-text">{t("management")}</h4>
             </div>
           </div>
 
@@ -193,13 +287,13 @@ function HomePage() {
               <div className="plus plus-2">+</div>
             </div>
             <div className="global-reach-badge">
-              <h3 className="global-title">Global Reach,</h3>
-              <h4 className="global-subtitle">Local Precision</h4>
+              <h3 className="global-title">{t("globalReach")}</h3>
+              <h4 className="global-subtitle">{t("localPrecision")}</h4>
             </div>
           </div>
 
           <div className="map-container">
-            <img src="/images/map.png" alt="Global Map" className="map-image" />
+            <img src={getMapImage()} alt="Global Map" className="map-image" />
           </div>
         </div>
       </section>
@@ -210,28 +304,33 @@ function HomePage() {
           <div className="social-contact-section">
             <div className="social-icons-footer">
               <img
-                src="/images/facebook.png"
+                src={getSocialImage("facebook")}
                 alt="Facebook"
                 className="social-icon-img"
               />
               <img
-                src="/images/whatsapp.png"
+                src={getSocialImage("whatsapp")}
                 alt="WhatsApp"
                 className="social-icon-img"
               />
               <img
-                src="/images/wechat.png"
+                src={getSocialImage("wechat")}
                 alt="WeChat"
                 className="social-icon-img"
               />
             </div>
+            {/* Contact Us Button if Hebrew language is selected use contactHB */}
             <div className="contact-us-btn">
               <img
-                src="/images/contact.png"
+                src={
+                  language === "hb"
+                    ? "/images/HB/contactusHB.png"
+                    : "/images/contact.png"
+                }
                 alt="Contact Us"
                 className="contact-btn-bg"
               />
-              <span className="contact-btn-text">CONTACT US</span>
+              <span className="contact-btn-text">{t("contactUs")}</span>
             </div>
           </div>
 
@@ -243,14 +342,18 @@ function HomePage() {
               <span className="email">Nidal@Alma-Trans.com</span>
             </div>
           </div>
-
+          {/* if Hebrew language is selected use locationHB */}
           <div className="location-section">
             <img
-              src="/images/location.png"
+              src={
+                language === "hb"
+                  ? "/images/HB/locationHB.png"
+                  : "/images/location.png"
+              }
               alt="Location"
               className="location-icon"
             />
-            <span className="location-text">Ramallah & Haifa</span>
+            <span className="location-text">{t("locations")}</span>
           </div>
         </div>
       </footer>

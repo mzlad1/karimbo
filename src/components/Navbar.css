@@ -77,6 +77,16 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+.lang-icon.active {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  border: 2px solid #f7931e;
+}
+
+.lang-icon.active:hover {
+  transform: scale(1.1) translateY(-1px);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .navbar {
@@ -126,4 +136,21 @@
     width: 40px;
     height: 40px;
   }
+}
+
+/* Hebrew Language Color Overrides for Navbar */
+.navbar[data-language="hb"] .navbar-divider {
+  background: #9e9e41 !important;
+}
+
+.navbar[data-language="hb"] .lang-hb {
+  background: #4b6467 !important;
+}
+
+.navbar[data-language="hb"] .lang-ar {
+  background: #9e9e41 !important;
+}
+
+.navbar[data-language="hb"] .lang-icon.active {
+  border: 2px solid #9e9e41 !important;
 }
