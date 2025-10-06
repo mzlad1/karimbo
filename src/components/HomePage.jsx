@@ -97,7 +97,7 @@ function HomePage() {
   return (
     <div
       className="homepage"
-      dir={language === "ar" ? "rtl" : "ltr"}
+      dir={language === "ar" || language === "hb" ? "rtl" : "ltr"}
       data-language={language}
     >
       {/* Hero Section */}
@@ -168,7 +168,7 @@ function HomePage() {
           <div className="text-box">
             <p
               className="text-box-content"
-              dir={language === "ar" ? "rtl" : "ltr"}
+              dir={language === "ar" || language === "hb" ? "rtl" : "ltr"}
             >
               {t("mainDescription")}
               <br />
@@ -358,7 +358,7 @@ function HomePage() {
               {language === "ar" ? (
                 <>
                   <span className="email" dir="ltr">
-                    Nidal@Alma-Trans.com
+                    Mosaab@Alma-Trans.com
                   </span>
                   <span className="phone" dir="ltr">
                     +972 59-3565-635
@@ -382,7 +382,7 @@ function HomePage() {
                     +972 59-3565-635
                   </span>
                   <span className="email" dir="ltr">
-                    Nidal@Alma-Trans.com
+                    Mosaab@Alma-Trans.com
                   </span>
                 </>
               )}
