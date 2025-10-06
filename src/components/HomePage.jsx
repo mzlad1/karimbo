@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import "./HomePage.css";
 
 function HomePage() {
   const { t, language } = useLanguage();
+  const [showWeChatModal, setShowWeChatModal] = useState(false);
 
   const getHeroTitleImage = () => {
     switch (language) {
@@ -232,7 +233,7 @@ function HomePage() {
               className="vert-dots-right"
             />
           </div>
-
+          {/* if language is arabic no need for card subtitle */}
           <div className="services-cards">
             <div className="service-card card-primary">
               <img
@@ -303,24 +304,42 @@ function HomePage() {
         <div className="footer-content">
           <div className="social-contact-section">
             <div className="social-icons-footer">
-              <img
-                src={getSocialImage("facebook")}
-                alt="Facebook"
-                className="social-icon-img"
-              />
-              <img
-                src={getSocialImage("whatsapp")}
-                alt="WhatsApp"
-                className="social-icon-img"
-              />
+              <a
+                href="https://www.facebook.com/almatrans.palestine"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={getSocialImage("facebook")}
+                  alt="Facebook"
+                  className="social-icon-img"
+                />
+              </a>
+              <a
+                href="https://wa.me/970593565638"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={getSocialImage("whatsapp")}
+                  alt="WhatsApp"
+                  className="social-icon-img"
+                />
+              </a>
               <img
                 src={getSocialImage("wechat")}
                 alt="WeChat"
                 className="social-icon-img"
+                onClick={() => setShowWeChatModal(true)}
+                style={{ cursor: "pointer" }}
               />
             </div>
             {/* Contact Us Button if Hebrew language is selected use contactHB */}
-            <div className="contact-us-btn">
+            <a
+              href="mailto:Nidal@Alma-Trans.com"
+              className="contact-us-btn"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
               <img
                 src={
                   language === "hb"
@@ -331,15 +350,42 @@ function HomePage() {
                 className="contact-btn-bg"
               />
               <span className="contact-btn-text">{t("contactUs")}</span>
-            </div>
+            </a>
           </div>
 
           <div className="contact-banner">
             <div className="contact-details">
-              <span className="phone">+972 59-3565-630</span>
-              <span className="phone">+972 54-9511-133</span>
-              <span className="phone">+972 59-3565-635</span>
-              <span className="email">Nidal@Alma-Trans.com</span>
+              {language === "ar" ? (
+                <>
+                  <span className="email" dir="ltr">
+                    Nidal@Alma-Trans.com
+                  </span>
+                  <span className="phone" dir="ltr">
+                    +972 59-3565-635
+                  </span>
+                  <span className="phone" dir="ltr">
+                    +972 54-9511-133
+                  </span>
+                  <span className="phone" dir="ltr">
+                    +972 59-3565-630
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span className="phone" dir="ltr">
+                    +972 59-3565-630
+                  </span>
+                  <span className="phone" dir="ltr">
+                    +972 54-9511-133
+                  </span>
+                  <span className="phone" dir="ltr">
+                    +972 59-3565-635
+                  </span>
+                  <span className="email" dir="ltr">
+                    Nidal@Alma-Trans.com
+                  </span>
+                </>
+              )}
             </div>
           </div>
           {/* if Hebrew language is selected use locationHB */}
@@ -357,6 +403,47 @@ function HomePage() {
           </div>
         </div>
       </footer>
+
+      {/* WeChat QR Code Modal */}
+      {showWeChatModal && (
+        <div
+          className="wechat-modal-overlay"
+          onClick={() => setShowWeChatModal(false)}
+        >
+          <div
+            className="wechat-modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="modal-close-btn"
+              onClick={() => setShowWeChatModal(false)}
+            >
+              ×
+            </button>
+            <h2 className="modal-title">
+              {t("wechatQRCodes") || "WeChat QR Codes"}
+            </h2>
+            <div className="qr-codes-container">
+              <div className="qr-code-item">
+                <img
+                  src="/images/almatransQR.png"
+                  alt="AlmaTrans WeChat QR"
+                  className="qr-code-image"
+                />
+                <p className="qr-code-label">AlmaTrans</p>
+              </div>
+              <div className="qr-code-item">
+                <img
+                  src="/images/nidalQR.png"
+                  alt="Nidal WeChat QR"
+                  className="qr-code-image"
+                />
+                <p className="qr-code-label">Nidal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

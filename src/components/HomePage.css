@@ -160,7 +160,7 @@
 
 .text-box-content {
   color: #1b457c;
-  font-size: 1.25rem;
+  font-size: 1.8rem;
   font-weight: 1000;
   line-height: 1.6;
   margin: 0;
@@ -168,7 +168,8 @@
 }
 
 /* Hebrew language styling for text-box content */
-.homepage[data-language="hb"] .text-box-content {
+.homepage[data-language="hb"],
+.homepage[data-language="ar"] .text-box-content {
   color: white;
 }
 
@@ -1277,7 +1278,7 @@
 
     .global-title,
     .global-subtitle {
-      font-size: 1.4rem;
+      font-size: 0.9rem;
     }
 
     .global-reach-badge {
@@ -1328,5 +1329,140 @@
     .location-text {
       font-size: 1rem;
     }
+  }
+}
+
+/* WeChat Modal Styles */
+.wechat-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.wechat-modal-content {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #666;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.modal-title {
+  text-align: center;
+  color: #1a5490;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.qr-codes-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.qr-code-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.qr-code-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 10px;
+  background: white;
+}
+
+.qr-code-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Responsive styles for modal */
+@media (max-width: 768px) {
+  .wechat-modal-content {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .modal-title {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .qr-codes-container {
+    gap: 1.5rem;
+  }
+
+  .qr-code-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .qr-code-label {
+    font-size: 1rem;
   }
 }

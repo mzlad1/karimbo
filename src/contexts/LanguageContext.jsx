@@ -41,6 +41,7 @@ const translations = {
     globalReach: "Global Reach,",
     localPrecision: "Local Precision",
     contactUs: "CONTACT US",
+    wechatQRCodes: "WeChat QR Codes",
 
     // Footer
     locations: "Ramallah & Haifa",
@@ -65,17 +66,18 @@ const translations = {
     logisticsSubtitle: "物流解决方案",
     airFreight: "空运",
     solutions: "解决方案",
-    oceanFreight: "海运",
-    services: "服务",
+    oceanFreight: "海运服务",
+    services: " ",
     roadTransport: "公路运输",
     delivery: "与配送",
     customs: "报关",
-    clearance: "清关",
-    warehouse: "仓库",
-    management: "管理",
+    clearance: " ",
+    warehouse: "仓库管理",
+    management: " ",
     globalReach: "全球覆盖，",
     localPrecision: "本地精准",
     contactUs: "联系我们",
+    wechatQRCodes: "微信二维码",
 
     // Footer
     locations: "拉马拉和海法",
@@ -87,30 +89,31 @@ const translations = {
 
     // Second Section
     mainDescription:
-      "نحن نقدم خدمة لوجستية مخصصة لتعزيز تجارة قطع غيار السيارات في الأسواق الإسرائيلية والفلسطينية.",
+      "نقدم خدمات لوجستية متخصصة لتجارة قطع غيار السيارات والشاحنات و الدراجات و المعدات الثقيلة في الأسواق الإسرائیلیة والفلسطينية.",
     experienceDescription:
-      "خبرتنا الطويلة ومعرفتنا المتطورة وفهمنا العميق للمتطلبات هي مفتاحنا لتأمين لوجستيات تجارتك من الباب إلى الباب دون قلق.",
+      "خبرتنا الطويلة ومعرفتنا المتطورة وفهمنا العميق للمتطلبات هي مفتاحنا لتأمين لوجستيات تجارتكم من الباب إلى الباب دون قلق.",
     autoParts: "قطع غيار السيارات",
-    truckParts: "قطع الشاحنات",
-    heavyParts: "قطع الآلات الهندسية الثقيلة",
-    motorcycleParts: "قطع الدراجات النارية",
+    truckParts: "قطع غيار الشاحنات",
+    heavyParts: "قطع غيار المعدات الثقيلة",
+    motorcycleParts: "قطع غيار الدراجات",
 
     // Third Section
-    logisticsTitle: "موثوقة، من النهاية إلى النهاية",
-    logisticsSubtitle: "حلول لوجستية",
+    logisticsTitle: "حلول لوجستية يمكنك الاعتماد عليها ",
+    logisticsSubtitle: "من النهاية إلى النهاية",
     airFreight: "الشحن الجوي",
-    solutions: "الحلول",
+    solutions: " ",
     oceanFreight: "الشحن البحري",
-    services: "الخدمات",
-    roadTransport: "النقل البري",
-    delivery: "والتسليم",
-    customs: "الجمارك",
-    clearance: "التخليص",
-    warehouse: "المستودع",
-    management: "الإدارة",
-    globalReach: "وصول عالمي،",
-    localPrecision: "دقة محلية",
+    services: " ",
+    roadTransport: "الشحن البري",
+    delivery: " ",
+    customs: "التخليص",
+    clearance: "الجمركي",
+    warehouse: "التجميع وإدارة",
+    management: "المخزون",
+    globalReach: "من جميع أنحاء العالم...",
+    localPrecision: "وبكل دقة",
     contactUs: "اتصل بنا",
+    wechatQRCodes: "رموز WeChat QR",
 
     // Footer
     locations: "رام الله وحيفا",
@@ -146,6 +149,7 @@ const translations = {
     globalReach: "הגעה גלובלית,",
     localPrecision: "דיוק מקומי",
     contactUs: "צור קשר",
+    wechatQRCodes: "קודי QR של WeChat",
 
     // Footer
     locations: "כפר קרע - חיפה",
