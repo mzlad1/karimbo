@@ -99,7 +99,7 @@ const translations = {
 
     // Third Section
     logisticsTitle: "حلول لوجستية يمكنك الاعتماد عليها ",
-    logisticsSubtitle: "من النهاية إلى النهاية",
+    logisticsSubtitle: "من البداية إلى النهاية",
     airFreight: "الشحن الجوي",
     solutions: " ",
     oceanFreight: "الشحن البحري",

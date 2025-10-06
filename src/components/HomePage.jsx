@@ -94,6 +94,24 @@ function HomePage() {
       : "/images/vert-dots.png";
   };
 
+  const getWhatsAppUrl = () => {
+    return language === "hb"
+      ? "https://wa.me/972539058972"
+      : "https://wa.me/970593565638";
+  };
+
+  const getFacebookUrl = () => {
+    return language === "hb"
+      ? "https://www.facebook.com/profile.php?id=61575891773266"
+      : "https://www.facebook.com/almatrans.palestine";
+  };
+
+  const getContactEmail = () => {
+    return language === "hb"
+      ? "mailto:mesk.ml2025@gmail.com"
+      : "mailto:Nidal@Alma-Trans.com";
+  };
+
   return (
     <div
       className="homepage"
@@ -305,7 +323,7 @@ function HomePage() {
           <div className="social-contact-section">
             <div className="social-icons-footer">
               <a
-                href="https://www.facebook.com/almatrans.palestine"
+                href={getFacebookUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -316,7 +334,7 @@ function HomePage() {
                 />
               </a>
               <a
-                href="https://wa.me/970593565638"
+                href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -336,7 +354,7 @@ function HomePage() {
             </div>
             {/* Contact Us Button if Hebrew language is selected use contactHB */}
             <a
-              href="mailto:Nidal@Alma-Trans.com"
+              href={getContactEmail()}
               className="contact-us-btn"
               style={{ textDecoration: "none", color: "inherit" }}
             >
@@ -357,29 +375,23 @@ function HomePage() {
             <div className="contact-details">
               {language === "ar" ? (
                 <>
+                  <span className="phone" dir="ltr">
+                    +972 53-724-8778
+                  </span>
                   <span className="email" dir="ltr">
                     Mosaab@Alma-Trans.com
                   </span>
+                </>
+              ) : language === "hb" ? (
+                <>
                   <span className="phone" dir="ltr">
-                    +972 59-3565-635
-                  </span>
-                  <span className="phone" dir="ltr">
-                    +972 54-9511-133
-                  </span>
-                  <span className="phone" dir="ltr">
-                    +972 59-3565-630
+                    +972 53-724-8778
                   </span>
                 </>
               ) : (
                 <>
                   <span className="phone" dir="ltr">
-                    +972 59-3565-630
-                  </span>
-                  <span className="phone" dir="ltr">
-                    +972 54-9511-133
-                  </span>
-                  <span className="phone" dir="ltr">
-                    +972 59-3565-635
+                    +972 53-724-8778
                   </span>
                   <span className="email" dir="ltr">
                     Mosaab@Alma-Trans.com
@@ -432,14 +444,16 @@ function HomePage() {
                 />
                 <p className="qr-code-label">AlmaTrans</p>
               </div>
-              <div className="qr-code-item">
-                <img
-                  src="/images/nidalQR.png"
-                  alt="Nidal WeChat QR"
-                  className="qr-code-image"
-                />
-                <p className="qr-code-label">Nidal</p>
-              </div>
+              {language !== "hb" && (
+                <div className="qr-code-item">
+                  <img
+                    src="/images/nidalQR.png"
+                    alt="Nidal WeChat QR"
+                    className="qr-code-image"
+                  />
+                  <p className="qr-code-label">Nidal</p>
+                </div>
+              )}
             </div>
           </div>
         </div>

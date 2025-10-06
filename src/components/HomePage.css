@@ -431,7 +431,7 @@
   color: #9e9e41;
 }
 
-/* RTL support for Arabic logistics titles */
+/* RTL support for Arabic logistics titles - left aligned on desktop */
 .homepage[dir="rtl"] .logistics-title,
 .homepage[dir="rtl"] .logistics-subtitle {
   direction: rtl;
@@ -1040,9 +1040,22 @@
     text-align: center;
   }
 
+  /* Center logistics titles for all languages in mobile */
   .logistics-title,
   .logistics-subtitle {
     font-size: 2.2rem;
+    text-align: center;
+  }
+
+  /* RTL direction for Arabic in mobile view */
+  .homepage[dir="rtl"] .logistics-title,
+  .homepage[dir="rtl"] .logistics-subtitle {
+    direction: rtl;
+  }
+
+  /* Center title underline for all languages in mobile */
+  .title-underline {
+    margin: 0 auto;
   }
 
   .services-cards {
@@ -1409,6 +1422,11 @@
   font-weight: bold;
 }
 
+/* in hebrew make the color #1a5490 also rtl */
+.homepage[data-language="hb"] .modal-title {
+  color: #4b6467;
+  direction: rtl;
+}
 .qr-codes-container {
   display: flex;
   gap: 2rem;
