@@ -811,6 +811,11 @@
   color: white;
 }
 
+/* Hebrew language styling - center contact details */
+.homepage[data-language="hb"] .contact-details {
+  justify-content: center;
+}
+
 .location-section {
   display: flex;
   align-items: center;

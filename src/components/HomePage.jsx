@@ -376,7 +376,13 @@ function HomePage() {
               {language === "ar" ? (
                 <>
                   <span className="phone" dir="ltr">
-                    +972 53-724-8778
+                    +972 59-3565-635
+                  </span>
+                  <span className="phone" dir="ltr">
+                    +972 54-9511-133
+                  </span>
+                  <span className="phone" dir="ltr">
+                    +972 59-3565-630
                   </span>
                   <span className="email" dir="ltr">
                     Mosaab@Alma-Trans.com
@@ -391,7 +397,13 @@ function HomePage() {
               ) : (
                 <>
                   <span className="phone" dir="ltr">
-                    +972 53-724-8778
+                    +972 59-3565-630
+                  </span>
+                  <span className="phone" dir="ltr">
+                    +972 54-9511-133
+                  </span>
+                  <span className="phone" dir="ltr">
+                    +972 59-3565-635
                   </span>
                   <span className="email" dir="ltr">
                     Mosaab@Alma-Trans.com
