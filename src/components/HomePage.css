@@ -1054,6 +1054,7 @@
   .homepage[dir="rtl"] .logistics-title,
   .homepage[dir="rtl"] .logistics-subtitle {
     direction: rtl;
+    text-align: center;
   }
 
   /* Center title underline for all languages in mobile */
