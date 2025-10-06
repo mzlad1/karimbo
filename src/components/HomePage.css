@@ -168,8 +168,11 @@
 }
 
 /* Hebrew language styling for text-box content */
-.homepage[data-language="hb"],
 .homepage[data-language="ar"] .text-box-content {
+  color: white;
+}
+
+.homepage[data-language="hb"] .text-box-content {
   color: white;
 }
 
