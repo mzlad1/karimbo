@@ -168,6 +168,34 @@ export const LanguageProvider = ({ children }) => {
     localStorage.setItem("selectedLanguage", language);
   }, [language]);
 
+  // Update document title and favicon based on language
+  useEffect(() => {
+    const updateTitleAndFavicon = () => {
+      let title, faviconPath;
+
+      if (language === "hb") {
+        // Hebrew uses Mesk-Trade
+        title = "Mesk-Trade";
+        faviconPath = "/logoHB.ico";
+      } else {
+        // All other languages use Alma-Trans
+        title = "Alma-Trans";
+        faviconPath = "/logo1.ico";
+      }
+
+      // Update document title
+      document.title = title;
+
+      // Update favicon
+      const favicon = document.getElementById("favicon");
+      if (favicon) {
+        favicon.href = faviconPath;
+      }
+    };
+
+    updateTitleAndFavicon();
+  }, [language]);
+
   const t = (key) => {
     return translations[language][key] || translations.en[key] || key;
   };
