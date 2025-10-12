@@ -213,6 +213,11 @@
   font-size: 1.2em;
 }
 
+/* Hebrew language styling for parts-item::before */
+.homepage[data-language="hb"] .parts-item::before {
+  color: #4b6467;
+}
+
 .homepage[dir="rtl"] .card-title,
 .homepage[dir="rtl"] .card-subtitle {
   text-align: center; /* Keep cards centered regardless of RTL */
