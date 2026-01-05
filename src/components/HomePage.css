@@ -1387,8 +1387,8 @@
   background: white;
   border-radius: 20px;
   padding: 2rem;
-  max-width: 600px;
-  width: 90%;
+  max-width: 900px;
+  width: 100%;
   position: relative;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   animation: slideUp 0.3s ease-in-out;
@@ -1477,7 +1477,7 @@
 @media (max-width: 768px) {
   .wechat-modal-content {
     padding: 1.5rem;
-    width: 95%;
+    width: 85%;
   }
 
   .modal-title {

@@ -457,14 +457,24 @@ function HomePage() {
                 <p className="qr-code-label">AlmaTrans</p>
               </div>
               {language !== "hb" && (
-                <div className="qr-code-item">
-                  <img
-                    src="/images/nidalQR.png"
-                    alt="Nidal WeChat QR"
-                    className="qr-code-image"
-                  />
-                  <p className="qr-code-label">Nidal</p>
-                </div>
+                <>
+                  <div className="qr-code-item">
+                    <img
+                      src="/images/nidalQR.png"
+                      alt="Nidal WeChat QR"
+                      className="qr-code-image"
+                    />
+                    <p className="qr-code-label">Nidal</p>
+                  </div>
+                  <div className="qr-code-item">
+                    <img
+                      src="/images/emanQR.png"
+                      alt="Eman WeChat QR"
+                      className="qr-code-image"
+                    />
+                    <p className="qr-code-label">Eman</p>
+                  </div>
+                </>
               )}
             </div>
           </div>
